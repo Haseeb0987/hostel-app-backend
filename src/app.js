@@ -52,6 +52,11 @@ app.get('/api/docs.json', (_req, res) => {
   res.send(swaggerSpec);
 });
 
+// ── Health Check ──
+app.get('/health', (_req, res) => {
+  res.status(200).json({ success: true, message: 'Server is running' });
+});
+
 // ── Routes ──
 app.use(routes);
 
